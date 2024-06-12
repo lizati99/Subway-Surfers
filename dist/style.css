@@ -2,7 +2,7 @@
     --color-bg:#282F2F;
     --color-text:#EEE;
     --color-secondary:#00897B;
-    --color-overlay:#282F2F;
+    --color-overlay:#26a69a;
 }
 *{
     font-family: 'Audiowide';
@@ -39,8 +39,8 @@
     align-items: center;
     height: 60vmin;
     width: 60vmin;
-    border-radius: 5px;
-    font-size: 40px;
+    border-radius: 1vmin;
+    font-size: 5vmin;
 }
 .finalScore span{
     color: var(--color-secondary);
@@ -50,7 +50,7 @@
     color: var(--color-secondary);
     cursor: pointer;
     padding: .5vmin 3vmin;
-    border-radius: 5px;
+    border-radius: 1vmin;
 }
 /* End Overlay */
 /* Start Overlay Effect */
@@ -58,7 +58,8 @@
     position: absolute;
     height: 200vh;
     width: 100%;
-    background-color: var(--color-bg);
+    background-color: var(--color-overlay);
+    opacity:.3;
     z-index: 1000;
     transform: translateY(-200vh);
 }
@@ -87,7 +88,7 @@
     width: 50vmin;
     position: relative;
     overflow: hidden;
-    border: 2px white solid;
+    border: .3vmin white solid;
     border-radius: 1vmin;
 }
 
@@ -96,12 +97,12 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-bottom: 5vmin;
+    margin-bottom: 3vmin;
     height: 10vmin;
     width: 60vmin;
     background-color: var(--color-secondary);
-    border-radius: 5px;
-    border: 2px solid var(--color-text);
+    border-radius: 1vmin;
+    border: .3vmin solid var(--color-text);
 }
 
 .road{
@@ -129,7 +130,6 @@
     /* left: 20vmin; */
     height: 10vmin;
     width: 10vmin;
-    border-radius: 2px;
     /* animation: blockMoveDown 1.5s linear infinite; */
     background-image: url('../img/box-truck-vector-mockup-isolated-vehicle-template-side-front-back-top-view-small-white-background-branding-corporate-236595803-removebg-preview.png');
     background-size: contain;
@@ -162,10 +162,10 @@
     align-items: center;
     height: 10vmin;
     width: 60vmin;
-    margin-top: 5vmin;
+    margin-top: 3vmin;
     background-color: var(--color-secondary);
-    border-radius: 5px;
-    border: 2px solid var(--color-text);
+    border-radius: 1vmin;
+    border: .3vmin solid var(--color-text);
 }
 
 .controls{
@@ -177,16 +177,25 @@
 
 .control-btn {
     background-color: transparent;
-    font-size: 10px;
+    font-size: 1.3vmin;
     border: none;
     padding: 1vmin;
-    border-radius: 5px;
+    border-radius: .3vmin;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .control-btn:hover {
-    background-color: #f44336;
+    background-color: var(--color-text);
+    color: var(--color-secondary);
+}
+
+.volumeControl{
+    -webkit-appearance: none;
+    border-radius: .3vmin;
+    margin-left: 1vmin;
+    height: 1vmin;
+    width: 8vmin;
 }
 
 .active{

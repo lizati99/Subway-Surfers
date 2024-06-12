@@ -10,6 +10,7 @@ const finalScore = document.querySelector(".finalScore") as HTMLElement;
 const replay = document.querySelector(".replay") as HTMLElement;
 const overlayElement = document.querySelector(".overlay") as HTMLElement;
 const effectElement = document.querySelector(".overlay-effect") as HTMLElement;
+const gameAudio = document.querySelector("#myAudio") as HTMLElement;
 
 const display= new Display(overlayElement, effectElement, finalScore);
 
@@ -25,3 +26,32 @@ replay.addEventListener("click", item=>{
     game = new Game(display, player, block, scoreElement);
 });
 
+
+const audio = new Audio('../song.mp3');
+const audioControls=document.querySelectorAll(".control-btn") as NodeListOf<HTMLElement>;
+const volumeControl = document.querySelector('.volumeControl') as HTMLInputElement;
+
+audioControls.forEach(control=>{
+    control.addEventListener("click", event=>{
+        console.log("helo");
+        const target=event.target as HTMLElement;
+        switch (target.innerHTML) {
+            case "Play":
+                audio.play();
+                break;
+            case "Pause":
+                audio.pause();
+                break;
+            case "Stop":
+                audio.pause();
+                audio.currentTime=0;
+            default:
+                break;
+        }
+    });
+});
+
+volumeControl.addEventListener('input', event => {
+    const target = event.target as HTMLInputElement;
+    audio.volume = parseFloat(target.value);
+});

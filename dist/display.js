@@ -5,9 +5,11 @@ export class Display {
         this.finalScore = finalScore;
     }
     showPopUp() {
+        setTimeout(() => {
+            this.boxGameOver.classList.add("active");
+        }, 800);
         this.boxEffect.classList.add("active");
         this.boxEffect.style.animation = "openOverlayAnimee 1s linear 1";
-        this.boxGameOver.classList.add("active");
     }
     hidePopUp() {
         this.boxEffect.classList.remove("active");
