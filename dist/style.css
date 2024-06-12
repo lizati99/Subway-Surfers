@@ -1,0 +1,196 @@
+:root{
+    --color-bg:#282F2F;
+    --color-text:#EEE;
+    --color-secondary:#00897B;
+    --color-overlay:#282F2F;
+}
+*{
+    font-family: 'Audiowide';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--color-text);
+    overflow: hidden;
+}
+/* Start Overlay */
+.overlay{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #4b4b4b7c;
+    z-index: 999;
+    animation: showOverlay 1.5s 1;
+}
+@keyframes showOverlay {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.popup{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 60vmin;
+    width: 60vmin;
+    border-radius: 5px;
+    font-size: 40px;
+}
+.finalScore span{
+    color: var(--color-secondary);
+}
+.replay{
+    background-color: var(--color-text);
+    color: var(--color-secondary);
+    cursor: pointer;
+    padding: .5vmin 3vmin;
+    border-radius: 5px;
+}
+/* End Overlay */
+/* Start Overlay Effect */
+.overlay-effect{
+    position: absolute;
+    height: 200vh;
+    width: 100%;
+    background-color: var(--color-bg);
+    z-index: 1000;
+    transform: translateY(-200vh);
+}
+@keyframes closeOverlayAnimee {
+    0%{transform: translateY(-200vh);}
+    100%{transform: translateY(100vh);}
+}
+@keyframes openOverlayAnimee {
+    0%{transform: translateY(100vh);}
+    100%{transform: translateY(-200vh);}
+}
+/* End Overlay Effect */
+.container{
+    height: 100vh;
+    width: 100vw;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-bg);
+    flex-direction: column;
+}
+.game-box{
+    order: 2;
+    height: 60vmin;
+    width: 50vmin;
+    position: relative;
+    overflow: hidden;
+    border: 2px white solid;
+    border-radius: 1vmin;
+}
+
+.header{
+    order: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 5vmin;
+    height: 10vmin;
+    width: 60vmin;
+    background-color: var(--color-secondary);
+    border-radius: 5px;
+    border: 2px solid var(--color-text);
+}
+
+.road{
+    position: absolute;
+    top: -50vmin;
+    left: 0;
+    width: 50vmin;
+    animation: roadMoveDown 1.5s linear infinite;
+}
+.player{
+    position: absolute;
+    /* top: 50vmin; */
+    /* left: 20vmin; */
+    height: 10vmin;
+    width: 10vmin;
+    background-image: url('../img/pngwing.com.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: left .5s;
+}
+.block{
+    position: absolute;
+    /* top: -10vmin; */
+    /* left: 20vmin; */
+    height: 10vmin;
+    width: 10vmin;
+    border-radius: 2px;
+    /* animation: blockMoveDown 1.5s linear infinite; */
+    background-image: url('../img/box-truck-vector-mockup-isolated-vehicle-template-side-front-back-top-view-small-white-background-branding-corporate-236595803-removebg-preview.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@keyframes blockMoveDown {
+    from{
+        top: -10vmin;
+    }
+    to{
+        top: 60vmin;
+    }
+}
+
+@keyframes roadMoveDown {
+    from{
+        top: -50vmin;
+    }
+    to{
+        top: 0;
+    }
+}
+
+.music-player{
+    order: 3;  
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 10vmin;
+    width: 60vmin;
+    margin-top: 5vmin;
+    background-color: var(--color-secondary);
+    border-radius: 5px;
+    border: 2px solid var(--color-text);
+}
+
+.controls{
+    width: 40%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.control-btn {
+    background-color: transparent;
+    font-size: 10px;
+    border: none;
+    padding: 1vmin;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.control-btn:hover {
+    background-color: #f44336;
+}
+
+.active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
